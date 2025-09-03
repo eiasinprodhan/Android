@@ -15,4 +15,11 @@
         <item name="colorSecondary">@color/colorSecondary</item>
     </style>
 
+    <style name="CircularImageViewStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- Makes it fully circular -->
+    </style>
+
+
+
 </resources>
