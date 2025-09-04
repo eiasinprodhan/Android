@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.vpnbrowser"
+    namespace = "com.example.browser"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.vpnbrowser"
+        applicationId = "com.example.browser"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -60,8 +60,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("org.nanohttpd:nanohttpd:2.3.1")
-    implementation("com.google.android.material:material:1.5.0")
 }

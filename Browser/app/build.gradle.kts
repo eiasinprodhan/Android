@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.vpnbrowser"
+    namespace = "com.example.browser"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.vpnbrowser"
+        applicationId = "com.example.browser"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -36,6 +36,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
 }
 
@@ -49,10 +50,12 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+    implementation(libs.androidx.activity)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -60,8 +63,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("org.nanohttpd:nanohttpd:2.3.1")
-    implementation("com.google.android.material:material:1.5.0")
 }

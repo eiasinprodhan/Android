@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background of the progress bar track (optional, can be transparent) -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+
+    <!-- The actual progress indicator -->
+    <item android:id="@android:id/progress">
+        <scale android:scaleWidth="100%">
+            <shape>
+                <solid android:color="?attr/colorAccent" /> <!-- Uses your theme's accent color for the progress -->
+                <corners android:radius="2dp" />
+            </shape>
+        </scale>
+    </item>
+</layer-list>
