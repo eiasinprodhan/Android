@@ -51,7 +51,7 @@ public class Home extends AppCompatActivity {
         webSettings.setDomStorageEnabled(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
-        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT); // or LOAD_NO_CACHE if needed
+        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
 
         webView.setWebViewClient(new WebViewClient() {
 
@@ -68,7 +68,6 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onFormResubmission(WebView view, android.os.Message dontResend, android.os.Message resend) {
-                // Automatically resend form data (not recommended for critical forms)
                 resend.sendToTarget();
             }
 
@@ -132,7 +131,6 @@ public class Home extends AppCompatActivity {
             return;
         }
 
-        // Optional: clear cache to avoid ERR_CACHE_MISS
         webView.clearCache(true);
 
         if (!url.startsWith("http://") && !url.startsWith("https://")) {

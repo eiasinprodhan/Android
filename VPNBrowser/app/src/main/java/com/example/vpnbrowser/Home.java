@@ -13,17 +13,20 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.vpnbrowser.config.ProxyConfig;
 import com.example.vpnbrowser.util.LocalProxyServer;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
+
+import com.example.vpnbrowser.config.ProxyConfig;
 
 public class Home extends AppCompatActivity {
 
@@ -31,6 +34,8 @@ public class Home extends AppCompatActivity {
     private Button search;
     private WebView webView;
     private LocalProxyServer server;
+
+    private ImageButton backButton, forwardButton, refreshButton, homeButton;
 
     private static final String TAG = "Home";
 
@@ -44,12 +49,15 @@ public class Home extends AppCompatActivity {
         search = findViewById(R.id.search);
         webView = findViewById(R.id.webView);
 
+        backButton = findViewById(R.id.backButton);
+        forwardButton = findViewById(R.id.forwardButton);
+        refreshButton = findViewById(R.id.refreshButton);
+        homeButton = findViewById(R.id.homeButton);
+
         setupWebView();
 
-        // Handle pressing the "Go" button
         search.setOnClickListener(v -> loadUrl());
 
-        // Handle pressing "Go" on the keyboard
         webAddress.setOnEditorActionListener((TextView v, int actionId, KeyEvent event) -> {
             if (actionId == EditorInfo.IME_ACTION_GO) {
                 loadUrl();
@@ -57,12 +65,31 @@ public class Home extends AppCompatActivity {
             }
             return false;
         });
+
+        backButton.setOnClickListener(v -> {
+            if (webView.canGoBack()) {
+                webView.goBack();
+            }
+        });
+
+        forwardButton.setOnClickListener(v -> {
+            if (webView.canGoForward()) {
+                webView.goForward();
+            }
+        });
+
+        refreshButton.setOnClickListener(v -> webView.reload());
+
+        homeButton.setOnClickListener(v -> {
+            webAddress.setText("");
+            webView.loadUrl("about:blank");
+        });
     }
 
     private void setupWebView() {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webSettings.setDomStorageEnabled(true);  // Enable DOM storage for modern sites
+        webSettings.setDomStorageEnabled(true);
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -79,7 +106,7 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                Toast.makeText(Home.this, "Failed to load page", Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Failed to load page: " + error.toString());
                 super.onReceivedError(view, request, error);
             }
         });
@@ -89,46 +116,40 @@ public class Home extends AppCompatActivity {
         String url = webAddress.getText().toString().trim();
 
         if (url.isEmpty()) {
-            Toast.makeText(this, "Please enter a URL", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "URL is empty");
             return;
         }
 
         if (!Patterns.WEB_URL.matcher(url).matches()) {
-            Toast.makeText(this, "Invalid URL", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Invalid URL: " + url);
             return;
         }
 
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
-            url = "https://" + url;  // Default to https
+            url = "https://" + url;
         }
 
         try {
-            // Stop previous server if running
             if (server != null) {
                 server.stop();
                 server = null;
             }
 
-            // SOCKS proxy details
-            Proxy proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("142.171.138.233", 8989));
+            Proxy proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(ProxyConfig.PROXY_IP, ProxyConfig.PROXY_PORT));
 
-            // Start the local proxy server on port 8080 with the target URL and SOCKS proxy
+
             server = new LocalProxyServer(8080, url, proxy);
             server.start();
 
             Log.d(TAG, "Local proxy server started on port 8080 for " + url);
 
-            // Load the local proxy URL in the WebView
             webView.loadUrl("http://localhost:8080");
 
         } catch (IOException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "Failed to start proxy server", Toast.LENGTH_SHORT).show();
             Log.e(TAG, "Failed to start proxy server", e);
         }
     }
 
-    // Handle back button to navigate web history
     @Override
     public void onBackPressed() {
         if (webView != null && webView.canGoBack()) {
@@ -143,8 +164,8 @@ public class Home extends AppCompatActivity {
         if (webView != null) {
             webView.loadUrl("about:blank");
             webView.stopLoading();
-            webView.setWebChromeClient(null);
             webView.setWebViewClient(null);
+            webView.setWebChromeClient(null);
             webView.destroy();
         }
 
