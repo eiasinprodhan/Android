@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">Browser</string>
-    <string name="placeholder">https://www.example.com</string>
-    <string name="button">Go</string>
-</resources>
