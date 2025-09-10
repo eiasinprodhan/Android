@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Land Calculator</string>
+    <string name="title">ভূমি ক্যালকুলেটর</string>
+    <string name="subtitle">জমির পরিমাপ, এখন সহজ সঠিক</string>
+</resources>
