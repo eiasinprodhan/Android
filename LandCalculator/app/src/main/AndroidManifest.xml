@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LandCalculator">
         <activity
+            android:name=".AboutLand"
+            android:exported="false" />
+        <activity
+            android:name=".CircleArea"
+            android:exported="false" />
+        <activity
+            android:name=".TriangleArea"
+            android:exported="false" />
+        <activity
+            android:name=".RectangleArea"
+            android:exported="false" />
+        <activity
             android:name=".SignInDigit"
             android:exported="false" />
         <activity

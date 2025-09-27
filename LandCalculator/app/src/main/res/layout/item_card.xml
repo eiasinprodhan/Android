@@ -32,8 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Material 3 Card"
-                android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                android:textColor="?attr/colorOnSurface" />
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/cardSubtitle"
@@ -41,8 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Properly constrained card using ConstraintLayout."
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?attr/colorOnSurfaceVariant" />
+                android:textColor="#A4A0A0" />
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

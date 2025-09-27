@@ -14,6 +14,10 @@ import com.google.android.material.card.MaterialCardView;
 public class MainActivity extends AppCompatActivity {
 
     private MaterialCardView signToDigit;
+    private MaterialCardView rectangleArea;
+    private MaterialCardView triangleArea;
+    private MaterialCardView circleArea;
+    private MaterialCardView aboutLand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         signToDigit = findViewById(R.id.signToDigit);
+        rectangleArea = findViewById(R.id.rectangelarea);
+        triangleArea = findViewById(R.id.triangelarea);
+        circleArea = findViewById(R.id.circlearea);
+        aboutLand = findViewById(R.id.landinfo);
 
         signToDigit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,5 +38,38 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        rectangleArea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), RectangleArea.class);
+                startActivity(intent);
+            }
+        });
+
+        triangleArea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), TriangleArea.class);
+                startActivity(intent);
+            }
+        });
+
+        circleArea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CircleArea.class);
+                startActivity(intent);
+            }
+        });
+
+        aboutLand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AboutLand.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
