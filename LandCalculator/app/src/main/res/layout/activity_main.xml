@@ -114,7 +114,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:textSize="10sp"
-                            android:text="আনা, গন্ডা, কড়া, ক্রান্তি, তিল থেকে সংখ্যায় রূপান্তর করতে পারবেন।"
+                            android:text="আনা, গন্ডা, কড়া, ক্রান্তি, তিল থেকে সংখ্যায় রূপান্তর"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
                             android:textColor="?attr/colorOnSurfaceVariant" />
                     </LinearLayout>
@@ -124,7 +124,7 @@
 
             <!-- Repeating Cards Start -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/digittosign"
+                android:id="@+id/rectangelarea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/light_card_even"
@@ -157,7 +157,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:text="সংখ্যা থেকে চিহ্ন"
+                            android:text="আয়তাকার ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceHeadlineSmall"
                             android:textColor="?attr/colorOnSurface" />
 
@@ -166,17 +166,15 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:textSize="10sp"
-                            android:text="আনা, গন্ডা, কড়া, ক্রান্তি, তিল থেকে সংখ্যায় রূপান্তর করতে পারবেন।"
+                            android:text="যেকোনো আয়তাকার ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
                             android:textColor="?attr/colorOnSurfaceVariant" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-            <!-- Repeat above card as needed -->
 
-            <!-- Repeating Cards Start -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/fractiontoland"
+                android:id="@+id/triangelarea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/light_card_odd"
@@ -209,7 +207,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:text="মালিকের অংশ থেকে জমির পরিমান"
+                            android:text="ত্রিভুজাকৃতি ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceHeadlineSmall"
                             android:textColor="?attr/colorOnSurface" />
 
@@ -218,17 +216,15 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:textSize="10sp"
-                            android:text="আনা, গন্ডা, কড়া, ক্রান্তি, তিল থেকে সংখ্যায় রূপান্তর করতে পারবেন।"
+                            android:text="যেকোনো ত্রিভুজাকৃতি ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
                             android:textColor="?attr/colorOnSurfaceVariant" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-            <!-- Repeat above card as needed -->
 
-            <!-- Repeating Cards Start -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/landtofraction"
+                android:id="@+id/circlearea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/light_card_even"
@@ -261,7 +257,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:text="জমির পরিমান থেকে মালিকের অংশ"
+                            android:text="বৃত্তাকার ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceHeadlineSmall"
                             android:textColor="?attr/colorOnSurface" />
 
@@ -270,12 +266,108 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:textSize="10sp"
-                            android:text="আনা, গন্ডা, কড়া, ক্রান্তি, তিল থেকে সংখ্যায় রূপান্তর করতে পারবেন।"
+                            android:text="যেকোনো বৃত্তাকার ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
                             android:textColor="?attr/colorOnSurfaceVariant" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/landinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/light_card_odd"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="Icon"
+                        android:src="@mipmap/logo" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="ভূমি সম্পর্কিত তথ্য"
+                            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                            android:textColor="?attr/colorOnSurface" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textSize="10sp"
+                            android:text="দলিল, পর্চা ও জমি সম্পর্কিত বিভিন্ন তথ্য"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/developerinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/light_card_even"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="Icon"
+                        android:src="@mipmap/logo" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="ডেভেলোপারের তথ্য"
+                            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                            android:textColor="?attr/colorOnSurface" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
             <!-- Repeat above card as needed -->
 
 
