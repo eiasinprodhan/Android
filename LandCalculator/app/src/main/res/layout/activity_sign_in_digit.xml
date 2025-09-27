@@ -9,6 +9,7 @@
     android:background="@android:color/white"
     tools:context=".SignInDigit">
 
+    <!-- Header Card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/headerCard"
         android:layout_width="0dp"
@@ -18,30 +19,40 @@
         app:cardElevation="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:strokeWidth="0dp">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="vertical"
+            android:gravity="center"
             android:padding="24dp">
 
             <ImageView
+                android:id="@+id/logo"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
-                android:contentDescription="Logo"
-                android:src="@mipmap/logo" />
+                android:src="@mipmap/logo"
+                android:contentDescription="App Logo" />
 
             <TextView
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:textStyle="bold"
                 android:text="চিহ্ন থেকে সংখ্যা"
                 android:textAppearance="?attr/textAppearanceHeadlineSmall"
                 android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/headerSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="আনা, গন্ডা, কড়া, ক্রান্তি, তিল থেকে সংখ্যায় রূপান্তর"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="@android:color/white" />
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -71,7 +82,8 @@
                 android:textSize="18sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp"
+                android:visibility="gone" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -89,6 +101,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Dropdowns for ana, gonda, kora, kranti, til -->
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -173,6 +187,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:layout_marginBottom="200dp"
                 android:text="রিসেট করুন"
                 android:backgroundTint="@android:color/holo_red_dark" />
 

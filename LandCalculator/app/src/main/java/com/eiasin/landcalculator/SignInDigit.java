@@ -107,15 +107,25 @@ public class SignInDigit extends AppCompatActivity {
         MaterialButton showButton = findViewById(R.id.showButton);
         MaterialButton resetButton = findViewById(R.id.resetButton);
 
+        // Setup dropdown lists with dialog selections
         setupDropdown(ana, "আনা", anaOptions);
         setupDropdown(gonda, "গন্ডা", gondaOptions);
         setupDropdown(kora, "কড়া", koraOptions);
         setupDropdown(kranti, "ক্রান্তি", krantiOptions);
         setupDropdown(til, "তিল", tilOptions);
 
-        showButton.setOnClickListener(v -> updateResult());
+        // Initially hide the result field
+        resultText.setVisibility(TextView.GONE);
 
-        resetButton.setOnClickListener(v -> resetFields());
+        showButton.setOnClickListener(v -> {
+            updateResult();
+            resultText.setVisibility(TextView.VISIBLE);
+        });
+
+        resetButton.setOnClickListener(v -> {
+            resetFields();
+            resultText.setVisibility(TextView.GONE);
+        });
     }
 
     private void setupDropdown(final AutoCompleteTextView dropdown, String title, List<OptionItem> options) {
@@ -174,7 +184,11 @@ public class SignInDigit extends AppCompatActivity {
         int krantiValue = getSelectedValue(kranti);
         int tilValue = getSelectedValue(til);
 
-        int numerator = anaValue * 20 * 4 * 3 * 20 + gondaValue * 4 * 3 * 20 + koraValue * 3 * 20 + krantiValue * 20 + tilValue;
+        int numerator = anaValue * 20 * 4 * 3 * 20
+                + gondaValue * 4 * 3 * 20
+                + koraValue * 3 * 20
+                + krantiValue * 20
+                + tilValue;
 
         int multipliedNumerator = numerator * multiplier;
         double shataksh = (double) multipliedNumerator / 76800;
@@ -206,7 +220,6 @@ public class SignInDigit extends AppCompatActivity {
 
     private void resetFields() {
         topFieldInput.setText("");
-        resultText.setText("");
 
         ana.setText("");
         ana.setTag(null);
@@ -222,6 +235,8 @@ public class SignInDigit extends AppCompatActivity {
 
         til.setText("");
         til.setTag(null);
+
+        resultText.setText("");
     }
 
     public static class OptionItem {

@@ -51,6 +51,17 @@
                 android:text="@string/subtitle"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="@android:color/white" />
+
+            <!-- Developer name added here -->
+            <TextView
+                android:id="@+id/developerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Developed by Eiasin Prodhan"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="@android:color/white" />
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -284,7 +295,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:padding="16dp">
@@ -305,29 +316,27 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
                             android:text="ভূমি সম্পর্কিত তথ্য"
                             android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                            android:textColor="?attr/colorOnSurface" />
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:textSize="10sp"
                             android:text="দলিল, পর্চা ও জমি সম্পর্কিত বিভিন্ন তথ্য"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
-                            android:textColor="?attr/colorOnSurfaceVariant" />
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="10sp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-            
-            <!-- Repeat above card as needed -->
 
+            <!-- Repeat above card as needed -->
 
         </LinearLayout>
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
