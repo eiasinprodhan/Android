@@ -75,7 +75,7 @@
             <com.eiasin.landcalculator.TriangleView
                 android:id="@+id/triangleView"
                 android:layout_width="300dp"
-                android:layout_height="500dp"
+                android:layout_height="300dp"
                 android:layout_marginBottom="20dp"
                 android:background="#FFFFFF"
                 android:visibility="gone" />
