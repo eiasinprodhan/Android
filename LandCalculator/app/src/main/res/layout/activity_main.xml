@@ -84,10 +84,10 @@
             <!-- Repeating Cards Start -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/signToDigit"
-                app:cardBackgroundColor="@color/light_card_odd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/light_card_odd"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -114,21 +114,28 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
                             android:text="চিহ্ন থেকে সংখ্যা"
                             android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                            android:textColor="?attr/colorOnSurface" />
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:textSize="10sp"
                             android:text="আনা, গন্ডা, কড়া, ক্রান্তি, তিল থেকে সংখ্যায় রূপান্তর"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
-                            android:textColor="?attr/colorOnSurfaceVariant" />
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="10sp" />
                     </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Arrow"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="?attr/colorOnSurfaceVariant" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <!-- Repeat above card as needed -->
@@ -138,8 +145,8 @@
                 android:id="@+id/rectangelarea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="@color/light_card_even"
-                android:layout_margin="16dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -166,21 +173,28 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
                             android:text="আয়তাকার ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                            android:textColor="?attr/colorOnSurface" />
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:textSize="10sp"
                             android:text="যেকোনো আয়তাকার ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
-                            android:textColor="?attr/colorOnSurfaceVariant" />
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="10sp" />
                     </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Arrow"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="?attr/colorOnSurfaceVariant" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -188,8 +202,8 @@
                 android:id="@+id/triangelarea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="@color/light_card_odd"
-                android:layout_margin="16dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -216,21 +230,28 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
                             android:text="ত্রিভুজাকৃতি ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                            android:textColor="?attr/colorOnSurface" />
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:textSize="10sp"
                             android:text="যেকোনো ত্রিভুজাকৃতি ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
-                            android:textColor="?attr/colorOnSurfaceVariant" />
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="10sp" />
                     </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Arrow"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="?attr/colorOnSurfaceVariant" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -238,8 +259,8 @@
                 android:id="@+id/circlearea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="@color/light_card_even"
-                android:layout_margin="16dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -266,21 +287,28 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
                             android:text="বৃত্তাকার ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                            android:textColor="?attr/colorOnSurface" />
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:textSize="10sp"
                             android:text="যেকোনো বৃত্তাকার ভূমির ক্ষেত্রফল"
                             android:textAppearance="?attr/textAppearanceBodyMedium"
-                            android:textColor="?attr/colorOnSurfaceVariant" />
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="10sp" />
                     </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Arrow"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="?attr/colorOnSurfaceVariant" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -288,8 +316,8 @@
                 android:id="@+id/landinfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="@color/light_card_odd"
-                android:layout_margin="16dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -331,6 +359,13 @@
                             android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="10sp" />
                     </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Arrow"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="?attr/colorOnSurfaceVariant" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
